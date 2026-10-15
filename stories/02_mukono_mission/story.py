@@ -108,6 +108,16 @@ def compare(options, distance):  # Function, parameter, loop: Week 1 tools.
         print(option.describe())
         print(f"Quote: UGX {option.quote_fare(distance):,}")  # Polymorphism.
 
+def cheapest(options, distance):
+    best = None
+    best_fare = None
+    for option in options:
+        fare = option.quote_fare(distance)
+        if best is None or fare < best_fare:
+            best = option
+            best_fare = fare
+    return best
+
 
 def main():
     print("=== THE MUKONO MISSION ===")
