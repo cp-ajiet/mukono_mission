@@ -79,6 +79,15 @@ class CheerfulMixin:
 class CheerfulStudentBoda(CheerfulMixin, StudentBoda):
     pass  # Hybrid hierarchy. super() follows this object's MRO.
 
+# EXTENSION 3: A free lift and a walk with a friend
+class CousinLift:
+    def __init__(self, name="Cousin's car"):
+        self.name = name
+
+    def describe(self):
+        return f"{self.name} Free lift from family, zero stress."
+    def quote_fare(self, distance):
+            return 0
 
 class WalkWithFriend:  # No Transport parent: duck typing in the same story.
     name = "Walk with a friend"
