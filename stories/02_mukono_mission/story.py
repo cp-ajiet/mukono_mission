@@ -25,7 +25,17 @@ class TripPurse:
         self.balance = self.balance - fare
         return True
 
+    
+# EXTENSION 2: Transport money top up
+    def top_up(self, amount):
+        "Adds a positive monetary amount to the balance."
+        "ReturnsTrue if succesfull, False if zero or negative"
+        if amount > 0:
+            self.balance +=amount
+            return True
+        return False
 
+    
 # ACT 2: All transport must quote a fare, but the calculation can differ.
 class Transport(ABC):
     currency = "UGX"  # Shared class attribute.
