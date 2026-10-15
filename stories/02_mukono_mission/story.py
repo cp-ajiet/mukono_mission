@@ -53,7 +53,14 @@ class Boda(Transport):  # IS-A Transport: single inheritance.
 class Taxi(Transport):  # Sibling classes: hierarchical inheritance.
     def quote_fare(self, distance):
         return 2000  # Flat classroom fare for this short route.
+# EXTENSION 1: Student Shuttle charges a fixed fare of UGX 1,500.
+class Shuttle(Transport):
 
+    def quote_fare(self, distance):
+        if distance <= 0:
+            return 0
+
+        return 1500
 
 class StudentBoda(Boda):  # Transport -> Boda -> StudentBoda: multilevel.
     def quote_fare(self, distance):
